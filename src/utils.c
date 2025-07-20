@@ -57,10 +57,10 @@ int find_tags_content(const char *tag, const char *xml, const char **res, int ma
    Returns size of channel id string if found and channel id in buffer.
 */
 
-int parse_channel_id(const char *html, char *buf, size_t bufsize) {
+size_t parse_channel_id(const char *html, char *buf, size_t bufsize) {
     char *cursor;
     char *end;
-    int id_len;
+    size_t id_len;
 
     cursor = strstr(html, "videos.xml?channel_id=");
     if (!cursor) return 0;

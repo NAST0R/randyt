@@ -9,6 +9,6 @@
 #include <stdbool.h>
 
 int find_tags_content(const char *tag, const char *xml, const char **res, int max_slots);
-int parse_channel_id(const char *html, char *buf, size_t bufsize);
+size_t parse_channel_id(const char *html, char *buf, size_t bufsize);
 
 #endif
