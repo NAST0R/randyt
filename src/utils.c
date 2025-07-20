@@ -3,6 +3,7 @@
 
 #define MAX_TAG_LEN 256
 #define MIN_TAG_LEN 3
+#define ID_OFFSET 22
 
 /*
    Helper to extract inner content of tags from YouTube RSS feed.
@@ -63,7 +64,7 @@ int parse_channel_id(const char *html, char *buf, size_t bufsize) {
 
     cursor = strstr(html, "videos.xml?channel_id=");
     if (!cursor) return 0;
-    cursor += 22;
+    cursor += ID_OFFSET;
 
     end = strchr(cursor, '\"');
     if (!end) return 0;
